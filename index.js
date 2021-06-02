@@ -19,8 +19,8 @@ let formatType = (ruls = []) => {
     return types
 }
 // 初始化commit ,将部分脚本写入到package.json中
-if (arg[2] && arg[2] === 'init') {
-  // if (true) {
+// if (arg[2] && arg[2] === 'init') {
+  if (true) {
   const packageFilePath = `${process.cwd()}/package.json`
   console.log(packageFilePath,'-packageFilePath')
     if (!fs.existsSync(packageFilePath)) {

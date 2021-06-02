@@ -30,6 +30,113 @@
     "git",
     "commit"
   ],
-  "license": "ISC"
- 
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "types": {
+        "feature": {
+          "title": "feature",
+          "description": "新增功能"
+        },
+        "bugfix": {
+          "title": "bugfix",
+          "description": "bug 修复"
+        },
+        "docs": {
+          "title": "docs",
+          "description": "文档(documentation)"
+        },
+        "minor": {
+          "title": "minor",
+          "description": "格式｜拼写，不影响程序逻辑的代码修改"
+        },
+        "optimization": {
+          "title": "optimization",
+          "description": "功能优化"
+        },
+        "perf": {
+          "title": "perf",
+          "description": "性能优化"
+        },
+        "merge": {
+          "title": "merge",
+          "description": "分支操作"
+        },
+        "build": {
+          "title": "build",
+          "description": "项目构建、持续集成、工程化方面的提交"
+        },
+        "refactor": {
+          "title": "refactor",
+          "description": "重构代码(既没有新增功能，也没有修复 bug)"
+        },
+        "test": {
+          "title": "test",
+          "description": "新增测试用例或是更新现有测试"
+        },
+        "revert": {
+          "title": "revert",
+          "description": "回滚某个更早之前的提交"
+        },
+        "chore": {
+          "title": "chore",
+          "description": "不属于以上类型的其他类型"
+        }
+      }
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feature",
+          "bugfix",
+          "docs",
+          "minor",
+          "optimization",
+          "perf",
+          "merge",
+          "build",
+          "refactor",
+          "test",
+          "revert",
+          "chore"
+        ]
+      ],
+      "subject-case": [
+        0
+      ]
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.(vue|scss|css|sass|less)": [
+      "stylelint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^12.1.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.27.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^13.13.1"
+  }
 }
