@@ -1,0 +1,35 @@
+{
+  "name": "@tencent/bk-commit",
+  "version": "1.0.18",
+  "description": "自动化验证git commit 格式",
+  "bin": {
+    "commit": "bin/www.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "bk-commit",
+    "gitcommit": "npm run ./index",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "dependencies": {
+    "chalk": "~4.1.0",
+    "commitiquette": "^1.0.5",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.2.0",
+    "cz-customizable": "^6.3.0",
+    "cz-emoji": "^1.3.1",
+    "edit-json-file": "^1.4.0",
+    "emoji-cz": "^0.3.1",
+    "enquirer": "^2.3.5",
+    "q": "^1.5.1",
+    "shelljs": "^0.8.4"
+  },
+  "keywords": [
+    "commit",
+    "msg",
+    "git",
+    "commit"
+  ],
+  "license": "ISC"
+ 
+}
