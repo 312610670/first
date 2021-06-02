@@ -1,5 +1,5 @@
 {
-  "name": "@tencent/bk-commit",
+  "name": "bk-commit",
   "version": "1.0.18",
   "description": "自动化验证git commit 格式",
   "bin": {
@@ -8,7 +8,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "bk-commit",
-    "gitcommit": "npm run ./index",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
